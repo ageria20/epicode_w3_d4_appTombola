@@ -1,17 +1,8 @@
 // Devo creare prima di tutto una funzione che mi crei 76 div
 
-const selectedCell = []
+const cellsNumber = []
+const randomNumbers = []
 
-const rondomNumber = (event) =>{
-    event.preventDefault()
-    const randomNumbers = []
-    // mi creo un numero causale tra 1 e 76
-    const getNumber = Math.floor(Math.random() * 77)
-    const spanNum = document.getElementById("randomNum")
-    spanNum.innerText = getNumber
-
-    return getNumber
-}
 const createCells = () => {
     const cellsCont = document.getElementById("container")
     for(let i = 0; i < 76; i++) {
@@ -21,20 +12,30 @@ const createCells = () => {
         cell.appendChild(numCell)
         cell.classList.add("numCell")
         cellsCont.appendChild(cell)
-        selectedCell.push(i+1)
+        cellsNumber.push(numCell.innerText)
     }
 }
 
 
 
-window.addEventListener("DOMContentLoaded", () => {
-    // Tutto ciò che metto qua dentro verrà eseguito solo ed esclusivamente una volta che il DOM iniziale verrà caricato completamente
+
     createCells()
   
     // Seleziono il form e ci aggancio all'evento 'submit' la funzione 'saveMeeting' che si occuperà di creare i nuovi meeting
-    const form = document.querySelector("form")
-    form.onsubmit = rondomNumber()
-  })
+    const button = document.querySelector("button")
+   button.addEventListener('click', function(){
+        // mi creo un numero causale tra 1 e 76
+        let getNumber 
+        const spanNum = document.getElementById("randomNum")
+        spanNum.innerText = getNumber
+        do {
+            getNumber = Math.floor(Math.random() * 76) + 1
+            spanNum.innerText = getNumber
+            if (randomNumbers.length > 76) break 
+        } while(randomNumbers.includes(getNumber))
+        const allCells = document.querySelectorAll(".numCell")
+        allCells[getNumber -1].classList.add("selectedCell")
+    })
 
 
 
