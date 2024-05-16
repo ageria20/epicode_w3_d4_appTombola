@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.body {
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+#container {
+    background-color: grey;
+    width: 800px;
+    border: 1px solid lightgreen;
+    height: 600px;
+    margin: auto;
+    padding: 3em;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+} 
+
+.numCell {
+    width: 4.5em;
+    height: 4.5em;
+    background-color:grey;;
+    display: inline-block;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 1em;
+}
+
+.selectedCell {
+    background-color: lightcoral;
+    width: 4.5em;
+    height: 4.5em;
+    background-color: lig;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid lightcoral;
+}
+
+#genNumber {
+text-align: center; 
+padding: 2em;   
+}
+
+button {
+    margin: 1em;
+}
